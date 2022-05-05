@@ -134,6 +134,17 @@
         > .details-div {
             width: 75%;
             box-sizing: border-box;
+
+            > .no-char-selected {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                color: rgb(130, 130, 130);
+                font-weight: bold;
+                text-align: center;
+            }
         }
     }
 }

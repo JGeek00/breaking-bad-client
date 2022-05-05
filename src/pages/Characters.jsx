@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { HalfMalf } from 'react-spinner-animated';
 
 import NavBar from '../components/NavBar';
@@ -13,6 +14,9 @@ const Characters = () => {
     const [loadingList, setLoadingList] = useState(true);
 
     const {characters, setCharacters} = useStore(state => state);
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const callGetCharacters = async () => {
@@ -47,6 +51,10 @@ const Characters = () => {
         }
     }, [searchValue]);
 
+    const navigateCharacter = (characterId) => {
+        navigate(`/${characterId}`);
+    }
+    console.log(location.pathname.substring(1))
     return (
         <div className='characters-page'>
             <NavBar pageTitle="All characters" />
@@ -71,7 +79,7 @@ const Characters = () => {
                             ) : (
                                 displayCharacters.length > 0 ? (
                                     displayCharacters.map(character => (
-                                        <div key={character.char_id} className='character'>
+                                        <div key={character.char_id} className='character' onClick={() => navigateCharacter(character.char_id)}>
                                             <div className='character-data'>
                                                 <div className='picture'>
                                                     <img src={character.img} alt="Character picture" />
@@ -96,7 +104,15 @@ const Characters = () => {
                     </div>
                 </div>
                 <div className='details-div'>
-                   
+                    {
+                        location.pathname.substring(1) ? (
+                            <Outlet />
+                        ) : (
+                            <div className='no-char-selected'>
+                                Select a character to display it's information here.
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </div>
