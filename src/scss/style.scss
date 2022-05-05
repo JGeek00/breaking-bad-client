@@ -1,2 +1,29 @@
+$fontFamily: 'SourceSansPro';
+
+@font-face {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../assets/fonts/SourceSansPro-Light.ttf');
+}
+
+@font-face {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../assets/fonts/SourceSansPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: $fontFamily;
+    font-style: normal;
+    font-weight: 700;
+    src: url('../assets/fonts/SourceSansPro-Bold.ttf');
+}
+
+html, body {
+    font-family: $fontFamily;
+}
+
 @import './characters.scss';
 @import './navbar.scss';
