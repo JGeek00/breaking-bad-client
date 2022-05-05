@@ -5,13 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+import 'react-spinner-animated/dist/index.css'
 import './scss/style.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
+    <BrowserRouter>
         <App />
-        </BrowserRouter>
-    </React.StrictMode>
+    </BrowserRouter>
 );
