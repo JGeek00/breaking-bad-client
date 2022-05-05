@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar';
 const Characters = () => {
     return (
         <div className='characters-page'>
-            <NavBar />
+            <NavBar pageTitle="All characters" />
         </div>
     );
 }
