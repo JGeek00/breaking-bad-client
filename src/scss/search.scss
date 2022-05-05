@@ -1,0 +1,27 @@
+.search {
+    position: relative;
+    width: 100%;
+
+    > input {
+        width: calc(100% - 85px);
+        outline: none;
+        border: none;
+        background-color: rgb(240, 240, 240);
+        padding: 10px 40px 10px 45px;
+        border-radius: 20px;
+        font-family: $fontFamily;
+    }
+
+    > .leading-icon {
+        position: absolute;
+        top: 7.5px;
+        left: 15px;
+    }
+
+    > .trailing-icon {
+        position: absolute;
+        top: 7.5px;
+        right: 15px;
+        cursor: pointer;
+    }
+}
