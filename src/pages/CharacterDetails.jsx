@@ -20,25 +20,26 @@ const CharacterDetails = () => {
         setSelectedCharacter(character);
     }, [characters, location.pathname]); 
 
-    useEffect(() => {
-        const callFetchQuote = async () => {
-            setLoadingQuote(true);
-            const result = await fetchRandomQuote(selectedCharacter.name.replaceAll(" ", "+"));
-            setLoadingQuote(false);
-            switch (result.code) {
-                case 200:
-                    setQuote(result.data[0].quote);
-                    break;
+    const callFetchQuote = async () => {
+        setLoadingQuote(true);
+        const result = await fetchRandomQuote(selectedCharacter.name.replaceAll(" ", "+"));
+        setLoadingQuote(false);
+        switch (result.code) {
+            case 200:
+                setQuote(result.data[0].quote);
+                break;
 
-                case 429:
-                    
-                    break;
-            
-                default:
+            case 429:
+                
+                break;
+        
+            default:
 
-                    break;
-            }
+                break;
         }
+    }
+
+    useEffect(() => {
         if (selectedCharacter) {
             callFetchQuote();
         }
@@ -58,17 +59,24 @@ const CharacterDetails = () => {
                                     <div className='name'>{selectedCharacter.name}</div>
                                 </div>
                                 <div className='right'>
-                                    <div className='quote'>
-                                        <img className='start-quote' src={QuoteIcon} alt="Quote icon" />
-                                        <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
-                                        <span className='quote-text'>
-                                            {
-                                                loadingQuote ? (
-                                                    <div>Loading a famous quote...</div>
-                                                ) : (quote)
-                                            }
-                                        </span>
-                                    </div>
+                                    {
+                                        !loadingQuote ? (
+                                            <div className='quote-div'>
+                                                <div className='quote'>
+                                                    <img className='start-quote' src={QuoteIcon} alt="Quote icon" />
+                                                    <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
+                                                    <span className='quote-text'>{quote}</span>
+                                                </div>  
+                                                <button className='refresh-quote' onClick={() => callFetchQuote()}>
+                                                    <i className="bi bi-arrow-repeat"></i>
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <div className='loading-quote'>
+                                                <HalfMalf center={false} />
+                                            </div>
+                                        )
+                                    }
                                 </div>
                             </div>
                             <div className='bottom'>

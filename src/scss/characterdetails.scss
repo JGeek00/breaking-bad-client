@@ -53,34 +53,68 @@
                 justify-content: center;
                 align-items: center;
 
-                > .quote {
-                    background-color: rgb(240, 240, 240);
-                    position: relative;
-                    padding: 20px;
-                    border-radius: 30px;
-                    margin-left: 50px;
-                    padding-right: 30px;
+                > .quote-div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
 
-                    > .start-quote {
-                        width: 100px;
-                        position: absolute;
-                        top: -60px;
-                        left: -40px;
-                        opacity: 0.15;
-                        transform: rotateY(180deg);
+                    > .quote {
+                        background-color: rgb(240, 240, 240);
+                        position: relative;
+                        padding: 20px;
+                        border-radius: 30px;
+                        margin-left: 50px;
+                        padding-right: 30px;
+                        min-width: 150px;
+                        text-align: center;
+    
+                        > .start-quote {
+                            width: 100px;
+                            position: absolute;
+                            top: -60px;
+                            left: -40px;
+                            opacity: 0.15;
+                            transform: rotateY(180deg);
+                        }
+    
+                        > .end-quote {
+                            width: 100px;
+                            position: absolute;
+                            top: -60px;
+                            right: -40px;
+                            opacity: 0.15;
+                        }
+    
+                        > span {
+                            font-size: 20px;
+                            font-family: 'Parisienne';
+                        }
                     }
 
-                    > .end-quote {
-                        width: 100px;
-                        position: absolute;
-                        top: -60px;
-                        right: -40px;
-                        opacity: 0.15;
-                    }
+                    > .refresh-quote {
+                        border: 1px solid rgb(180, 180, 180);
+                        outline: none;
+                        background-color: white;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        margin-top: 20px;
+                        transition: 0.2s;
+                        cursor: pointer;
+                        margin-left: 50px;
 
-                    > span {
-                        font-size: 20px;
-                        font-family: 'Parisienne';
+                        &:hover {
+                            background-color: rgb(240, 240, 240);
+                        }
+
+                        &:active {
+                            background-color: rgb(230, 230, 230);
+                        }
+
+                        > i {
+                            font-size: 25px;
+                        }
                     }
                 }
             }
