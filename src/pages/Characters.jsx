@@ -54,7 +54,7 @@ const Characters = () => {
                             ) : (
                                 displayCharacters.length > 0 ? (
                                     displayCharacters.map(character => (
-                                        <div key={character.char_id} className='character' onClick={() => navigateCharacter(character.char_id)}>
+                                        <div key={character.char_id} className={location.pathname.substring(1) === character.char_id.toString() ? 'character selected' : 'character'} onClick={() => navigateCharacter(character.char_id)}>
                                             <div className='character-data'>
                                                 <div className='picture'>
                                                     <img src={character.img} alt="Character" />

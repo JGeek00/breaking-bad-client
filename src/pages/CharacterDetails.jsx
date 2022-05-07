@@ -22,11 +22,17 @@ const CharacterDetails = () => {
 
     const callFetchQuote = async () => {
         setLoadingQuote(true);
+        setQuote("");
         const result = await fetchRandomQuote(selectedCharacter.name.replaceAll(" ", "+"));
         setLoadingQuote(false);
         switch (result.code) {
             case 200:
-                setQuote(result.data[0].quote);
+                if (result.data[0].quote) {
+                    setQuote(result.data[0].quote);
+                }
+                else {
+                    setQuote("");
+                }
                 break;
 
             case 429:
@@ -61,16 +67,20 @@ const CharacterDetails = () => {
                                 <div className='right'>
                                     {
                                         !loadingQuote ? (
-                                            <div className='quote-div'>
-                                                <div className='quote'>
-                                                    <img className='start-quote' src={QuoteIcon} alt="Quote icon" />
-                                                    <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
-                                                    <span className='quote-text'>{quote}</span>
-                                                </div>  
-                                                <button className='refresh-quote' onClick={() => callFetchQuote()}>
-                                                    <i className="bi bi-arrow-repeat"></i>
-                                                </button>
-                                            </div>
+                                            quote ? (
+                                                <div className='quote-div'>
+                                                    <div className='quote'>
+                                                        <img className='start-quote' src={QuoteIcon} alt="Quote icon" />
+                                                        <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
+                                                        <span className='quote-text'>{quote}</span>
+                                                    </div>  
+                                                    <button className='refresh-quote' onClick={() => callFetchQuote()}>
+                                                        <i className="bi bi-arrow-repeat"></i>
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <span className='no-quote'>No quote available.</span>
+                                            )
                                         ) : (
                                             <div className='loading-quote'>
                                                 <HalfMalf center={false} />
