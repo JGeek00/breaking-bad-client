@@ -57,7 +57,7 @@ const Characters = () => {
                                         <div key={character.char_id} className={location.pathname.substring(1) === character.char_id.toString() ? 'character selected' : 'character'} onClick={() => navigateCharacter(character.char_id)}>
                                             <div className='character-data'>
                                                 <div className='picture'>
-                                                    <img src={character.img} alt="Character" />
+                                                    <img src={character.img} alt="Character" loading='lazy' />
                                                 </div>  
                                                 <div className='details'>
                                                     <div className='topLine'>{character.name}</div>
