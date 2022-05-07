@@ -7,7 +7,16 @@ import QuoteIcon from '../assets/img/quote-icon.svg';
 import { fetchRandomQuote } from '../services/api-requests';
 
 const CharacterDetails = () => {
-    const {characters, loadingCharacters} = useStore(state => state); 
+    const {
+        // CHARACTERS
+        characters, 
+        loadingCharacters,
+
+        //MODALS
+        setApiLimitModal,
+        setNoConnectionModal,
+        setUnknownErrorModal
+    } = useStore(state => state);
 
     const [selectedCharacter, setSelectedCharacter] = useState();
     const [quote, setQuote] = useState("");
@@ -36,11 +45,19 @@ const CharacterDetails = () => {
                 break;
 
             case 429:
-                
+                setApiLimitModal(true);
                 break;
         
             default:
-
+                switch (result.error.code) {
+                    case 'ERR_NETWORK':
+                        setNoConnectionModal(true);
+                        break;
+                        
+                    default:
+                        setUnknownErrorModal(true);
+                        break;
+                }
                 break;
         }
     }

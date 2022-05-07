@@ -1,0 +1,67 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: 0.3s;
+    
+    &.open {
+        background-color: rgba(0, 0, 0, 0.3);
+        pointer-events: all;
+        
+        > .modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    > .modal {
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+        transform: scale(0);
+        transition: 0.3s;
+        z-index: 110;
+        opacity: 0;
+        min-width: 20%;
+
+        > .title {
+            font-size: 22px;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        > .buttons {
+            margin-top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+    
+            > .button {
+                border: 1px solid black;
+                border-radius: 20px;
+                padding: 10px;
+                font-family: $fontFamily;
+                background-color: white;
+                cursor: pointer;
+                transition: 0.2s;
+    
+                &:hover {
+                    background-color: rgb(240, 240, 240);
+                }
+    
+                &:active {
+                    background-color: rgb(230, 230, 230);
+                }
+            }
+        }
+    }
+}

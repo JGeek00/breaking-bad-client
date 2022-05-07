@@ -19,10 +19,10 @@ const Characters = () => {
     useEffect(() => {
         if (searchValue) {
             const filteredCharacters = characters.filter(character => character.name.toLowerCase().includes(searchValue.toLowerCase()));
-            setDisplayCharacters(filteredCharacters)
+            setDisplayCharacters(filteredCharacters);
         }
         else {
-            setDisplayCharacters(characters)
+            setDisplayCharacters(characters);
         }
     }, [searchValue, characters]);
 
