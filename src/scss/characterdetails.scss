@@ -2,6 +2,14 @@
     width: 100%;
     height: 100%;
 
+    > .loading {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     > .character {
         padding: 30px;
 

@@ -5,41 +5,16 @@ import { HalfMalf } from 'react-spinner-animated';
 import NavBar from '../components/NavBar';
 import Search from '../components/Search';
 
-import { fetchCharacters } from '../services/api-requests';
 import useStore from '../store/useStore';
 
 const Characters = () => {
     const [searchValue, setSearchValue] = useState("");
     const [displayCharacters, setDisplayCharacters] = useState([]);
-    const [loadingList, setLoadingList] = useState(true);
 
-    const {characters, setCharacters} = useStore(state => state);
+    const {characters, loadingCharacters} = useStore(state => state);
 
     const navigate = useNavigate();
     const location = useLocation();
-
-    useEffect(() => {
-        const callGetCharacters = async () => {
-            setLoadingList(true);
-            const result = await fetchCharacters();
-            setLoadingList(false);
-            switch (result.code) {
-                case 200:
-                    setCharacters(result.data);
-                    setDisplayCharacters(result.data);
-                    break;
-
-                case 429:
-                    
-                    break;
-            
-                default:
-
-                    break;
-            }
-        }
-        callGetCharacters();
-    }, []);
 
     useEffect(() => {
         if (searchValue) {
@@ -49,7 +24,7 @@ const Characters = () => {
         else {
             setDisplayCharacters(characters)
         }
-    }, [searchValue]);
+    }, [searchValue, characters]);
 
     const navigateCharacter = (characterId) => {
         navigate(`/${characterId}`);
@@ -63,7 +38,7 @@ const Characters = () => {
                     <div className='col-header'>
                         <div className='title'>Characters</div>
                         {
-                            !loadingList && characters.length > 0 ? (
+                            !loadingCharacters && characters.length > 0 ? (
                                 <div className='search-field'>
                                     <Search icon="bi-search" allowClear={true} value={searchValue} placeholder="Search by name..." onChange={setSearchValue} />
                                 </div>
@@ -72,7 +47,7 @@ const Characters = () => {
                     </div>
                     <div className='list'>
                         {
-                            loadingList ? (
+                            loadingCharacters ? (
                                 <div className='loading'>
                                     <HalfMalf center={false} />
                                 </div>
