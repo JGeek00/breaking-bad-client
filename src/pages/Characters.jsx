@@ -22,11 +22,11 @@ const Characters = () => {
         const callGetCharacters = async () => {
             setLoadingList(true);
             const result = await fetchCharacters();
+            setLoadingList(false);
             switch (result.code) {
                 case 200:
                     setCharacters(result.data);
                     setDisplayCharacters(result.data);
-                    setLoadingList(false);
                     break;
 
                 case 429:
@@ -54,10 +54,10 @@ const Characters = () => {
     const navigateCharacter = (characterId) => {
         navigate(`/${characterId}`);
     }
-    console.log(location.pathname.substring(1))
+
     return (
         <div className='characters-page'>
-            <NavBar pageTitle="All characters" />
+            <NavBar pageTitle="Breaking Bad" />
             <div className='page-content'>
                 <div className='characters-col'>
                     <div className='col-header'>
@@ -82,7 +82,7 @@ const Characters = () => {
                                         <div key={character.char_id} className='character' onClick={() => navigateCharacter(character.char_id)}>
                                             <div className='character-data'>
                                                 <div className='picture'>
-                                                    <img src={character.img} alt="Character picture" />
+                                                    <img src={character.img} alt="Character" />
                                                 </div>  
                                                 <div className='details'>
                                                     <div className='topLine'>{character.name}</div>

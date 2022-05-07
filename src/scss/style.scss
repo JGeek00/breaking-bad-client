@@ -21,6 +21,14 @@ $fontFamily: 'SourceSansPro';
     src: url('../assets/fonts/SourceSansPro-Bold.ttf');
 }
 
+@font-face {
+    font-family: 'Parisienne';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../assets/fonts/Parisienne-Regular.ttf');
+}
+
+
 html, body {
     font-family: $fontFamily;
 }
