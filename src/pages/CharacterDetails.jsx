@@ -28,14 +28,17 @@ const CharacterDetails = () => {
     const location = useLocation();
 
     useEffect(() => {
-        const character = characters.find(character => character.char_id.toString() === location.pathname.substring(1));
-        if (character) {
-            setSelectedCharacter(character);
+        if (!loadingCharacters) {
+            const character = characters.find(character => character.char_id.toString() === location.pathname.substring(1));
+            if (character) {
+                setSelectedCharacter(character);
+            }
+            else {
+                console.log(characters)
+                setCharacterNotFound(true);
+            }
         }
-        else {
-            setCharacterNotFound(true);
-        }
-    }, [characters, location.pathname]); 
+    }, [characters, loadingCharacters, location.pathname]); 
 
     const callFetchQuote = async () => {
         setLoadingQuote(true);
