@@ -17,8 +17,22 @@ const App = () => {
         //MODALS
         setApiLimitModal,
         setNoConnectionModal,
-        setUnknownErrorModal
+        setUnknownErrorModal,
+
+        // CONFIG
+        screenWidth,
+        setScreenWidth
     } = useStore(state => state);
+
+    useEffect(() => {
+        const resizeListener = () => {
+            setScreenWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', resizeListener);
+        return () => {
+            window.removeEventListener('resize', resizeListener);
+        }
+    }, []);
 
     useEffect(() => {
         const callGetCharacters = async () => {
@@ -51,14 +65,23 @@ const App = () => {
     }, []);
 
     return (
-        <div>
+        <>
             <CommonModals />
             <Routes>
-                <Route path="/" element={<Characters />}>
-                    <Route path=":characterId" element={<CharacterDetails />} />
-                </Route>
+                {
+                    screenWidth > 900 ? (
+                        <Route path="/" element={<Characters />}>
+                            <Route path=":characterId" element={<CharacterDetails />} />
+                        </Route>
+                    ) : (
+                        <>
+                            <Route path="/" element={<Characters />} />
+                            <Route path=":characterId" element={<CharacterDetails />} />
+                        </>
+                    )
+                }
             </Routes>
-        </div>
+        </>
     );
 }
 

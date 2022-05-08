@@ -170,3 +170,23 @@
         }
     }
 }
+
+@media (max-width: 900px) {
+    .character-details-page {
+        overflow-x: hidden;
+
+        > .character > .top {
+            flex-direction: column;
+            
+            > .left {
+                width: 100%;
+                margin-right: unset;
+            }
+    
+            > .right {
+                width: 100%;
+                margin-left: unset;
+            }
+        }
+    }
+}

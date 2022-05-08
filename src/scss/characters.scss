@@ -161,3 +161,15 @@
         }
     }
 }
+
+@media (max-width: 900px) {
+    .characters-page > .page-content {
+        > .characters-col {
+            width: 100%;
+        }
+
+        > .details-div {
+            display: none;
+        }
+    }
+}

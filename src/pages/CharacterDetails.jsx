@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { HalfMalf } from 'react-spinner-animated';
 
 import Modal from '../components/Modal';
@@ -7,6 +7,7 @@ import Modal from '../components/Modal';
 import useStore from '../store/useStore';
 import QuoteIcon from '../assets/img/quote-icon.svg';
 import { fetchRandomQuote } from '../services/api-requests';
+import NavBar from '../components/NavBar';
 
 const CharacterDetails = () => {
     const {
@@ -17,7 +18,10 @@ const CharacterDetails = () => {
         //MODALS
         setApiLimitModal,
         setNoConnectionModal,
-        setUnknownErrorModal
+        setUnknownErrorModal,
+
+        // CONFIG
+        screenWidth
     } = useStore(state => state);
 
     const [selectedCharacter, setSelectedCharacter] = useState();
@@ -26,6 +30,7 @@ const CharacterDetails = () => {
     const [loadingQuote, setLoadingQuote] = useState(true);
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!loadingCharacters) {
@@ -87,6 +92,11 @@ const CharacterDetails = () => {
                 defaultButtons={true}
                 onClose={() => setCharacterNotFound(false)}
             />
+            {   
+                screenWidth <= 900 ? (
+                    <NavBar pageTitle="Character" goBack={() => navigate('/', {replace: true})} />
+                ) : null
+            }
             <div className='character-details-page'>
                 {
                     !loadingCharacters ? (

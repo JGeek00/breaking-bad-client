@@ -6,11 +6,40 @@
     box-sizing: border-box;
 
     > .left-content {
-        padding: 20px;
+        padding: 15px 20px;
+        display: flex;
+
+        > .back-button {
+            display: none;
+            border: none;
+            background-color: white;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            outline: none;
+            border-radius: 50%;
+            transition: 0.2s;
+            cursor: pointer;
+            margin-right: 20px;
+
+            > i {
+                font-size: 25px;
+            }
+
+            &:hover {
+                background-color: rgb(240, 240, 240);
+            }
+
+            &:active {
+                background-color: rgb(230, 230, 230);
+            }
+        }
 
         > .page-title {
             font-size: 20px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
         }
     }
 
@@ -19,5 +48,11 @@
         height: 100%;
         padding: 5px;
         margin-right: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar > .left-content > .back-button {
+        display: block;
     }
 }
