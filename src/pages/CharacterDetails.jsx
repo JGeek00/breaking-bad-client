@@ -34,7 +34,6 @@ const CharacterDetails = () => {
                 setSelectedCharacter(character);
             }
             else {
-                console.log(characters)
                 setCharacterNotFound(true);
             }
         }
