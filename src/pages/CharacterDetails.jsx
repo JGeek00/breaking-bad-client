@@ -9,6 +9,7 @@ import useStore from '../store/useStore';
 import QuoteIcon from '../assets/img/quote-icon.svg';
 import { fetchRandomQuote } from '../services/api-requests';
 import NavBar from '../components/NavBar';
+import IconButton from '../components/IconButton';
 
 const CharacterDetails = () => {
     const {
@@ -130,9 +131,9 @@ const CharacterDetails = () => {
                                                             <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
                                                             <span className='quote-text'>{quote}</span>
                                                         </div>  
-                                                        <button className='refresh-quote' onClick={() => callFetchQuote()}>
-                                                            <i className="bi bi-arrow-repeat"></i>
-                                                        </button>
+                                                        <div className='refresh-quote'>
+                                                            <IconButton icon={<i className="bi bi-arrow-repeat"></i>} withBorder={true} onClick={() => callFetchQuote()}/>
+                                                        </div>
                                                     </div>
                                                 ) : (
                                                     <span className='no-quote'>{t("noQuoteAvailable")}</span>

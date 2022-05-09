@@ -13,6 +13,12 @@
     transition: 0.2s;
     cursor: pointer;
 
+    &.with-border {
+        border: 1px solid rgb(180, 180, 180);
+        width: 40px;
+        height: 40px;
+    }
+
     > i {
         font-size: 25px;
     }

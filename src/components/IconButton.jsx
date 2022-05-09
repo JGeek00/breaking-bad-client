@@ -1,8 +1,8 @@
 import React from 'react';
 
-const IconButton = ({ icon, onClick }) => {
+const IconButton = ({ icon, withBorder, onClick }) => {
     return (
-        <button className='icon-button' onClick={onClick}>
+        <button className={withBorder ? 'icon-button with-border' : 'icon-button'} onClick={onClick}>
             {icon}
         </button>
     );
