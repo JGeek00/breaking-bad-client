@@ -21,7 +21,8 @@ const App = () => {
 
         // CONFIG
         screenWidth,
-        setScreenWidth
+        setScreenWidth,
+        setApiRequestError
     } = useStore(state => state);
 
     useEffect(() => {
@@ -41,14 +42,17 @@ const App = () => {
             setLoadingCharacters(false);
             switch (result.code) {
                 case 200:
+                    setApiRequestError(false);
                     setCharacters(result.data);
                     break;
                     
                 case 429:
+                    setApiRequestError(true);
                     setApiLimitModal(true);
                     break;
             
                 default:
+                    setApiRequestError(true);
                     switch (result.error.code) {
                         case 'ERR_NETWORK':
                             setNoConnectionModal(true);

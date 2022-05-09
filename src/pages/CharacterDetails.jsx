@@ -22,7 +22,9 @@ const CharacterDetails = () => {
         setUnknownErrorModal,
 
         // CONFIG
-        screenWidth
+        screenWidth,
+        apiRequestError,
+        setApiRequestError
     } = useStore(state => state);
 
     const [selectedCharacter, setSelectedCharacter] = useState();
@@ -42,10 +44,12 @@ const CharacterDetails = () => {
                 setSelectedCharacter(character);
             }
             else {
-                setCharacterNotFound(true);
+                if (!apiRequestError) {
+                    setCharacterNotFound(true);
+                }
             }
         }
-    }, [characters, loadingCharacters, location.pathname]); 
+    }, [characters, apiRequestError, loadingCharacters, location.pathname]); 
 
     const callFetchQuote = async () => {
         setLoadingQuote(true);
@@ -54,6 +58,7 @@ const CharacterDetails = () => {
         setLoadingQuote(false);
         switch (result.code) {
             case 200:
+                setApiRequestError(false);
                 if (result.data[0].quote) {
                     setQuote(result.data[0].quote);
                 }
@@ -63,10 +68,12 @@ const CharacterDetails = () => {
                 break;
 
             case 429:
+                setApiRequestError(true);
                 setApiLimitModal(true);
                 break;
         
             default:
+                setApiRequestError(true);
                 switch (result.error.code) {
                     case 'ERR_NETWORK':
                         setNoConnectionModal(true);
