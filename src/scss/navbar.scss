@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    height: 65px;
 
     > .left-content {
         display: flex;
@@ -28,8 +29,6 @@
             font-weight: bold;
             display: flex;
             align-items: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
         }
     }
 
