@@ -12,12 +12,12 @@ const Characters = () => {
     const [searchValue, setSearchValue] = useState("");
     const [displayCharacters, setDisplayCharacters] = useState([]);
 
-    const {characters, loadingCharacters} = useStore(state => state);
+    const { characters, loadingCharacters } = useStore(state => state);
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (searchValue) {

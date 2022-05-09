@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({value, icon, allowClear, placeholder, onChange}) => {
+const Search = ({ value, icon, allowClear, placeholder, onChange }) => {
     return (
         <div className='search'>
             {icon ? <i className={`leading-icon bi ${icon}`}></i> : null}

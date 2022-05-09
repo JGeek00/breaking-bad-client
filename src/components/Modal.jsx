@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Modal = ({open, title, content, closeClickOutside, defaultButtons, onClose}) => {
-    const {t} = useTranslation();
+const Modal = ({ open, title, content, closeClickOutside, defaultButtons, onClose }) => {
+    const { t } = useTranslation();
 
     return (
         <div className={open ? 'overlay open' : 'overlay'} onClick={closeClickOutside ? onClose : null}>

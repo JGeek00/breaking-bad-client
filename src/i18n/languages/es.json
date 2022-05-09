@@ -3,6 +3,7 @@
     "nothingShowHere": "Nada que mostrar aqui...",
     "selectCharacter": "Elige un personaje para mostrar su información aquí.",
     "searchByName": "Buscar por nombre...",
+    "character": "Personaje",
     "noQuoteAvailable": "No hay frases disponibles.",
     "nickname": "Apodo",
     "portrayed": "Interpretado",
@@ -18,5 +19,9 @@
     "noConnection": "Sin conexión",
     "noConnectionAvailable": "No hay conexión a internet. Comprueba tu conexión y recarga la página.",
     "unknownError": "Error desconocido",
-    "unknownErrorOccured": "Ocurrió un error desconocido."
+    "unknownErrorOccured": "Ocurrió un error desconocido.",
+    "settings": "Ajustes",
+    "language": "Idioma",
+    "spanish": "Español",
+    "english": "Inglés"
 }

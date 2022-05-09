@@ -16,7 +16,7 @@ const CommonModals = () => {
         setUnknownErrorModal
     } = useStore(state => state);
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <>

@@ -35,7 +35,7 @@ const CharacterDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         if (!loadingCharacters) {
@@ -104,7 +104,7 @@ const CharacterDetails = () => {
             />
             {   
                 screenWidth <= 1100 ? (
-                    <NavBar pageTitle="Character" goBack={() => navigate('/', {replace: true})} />
+                    <NavBar pageTitle={t("character")} goBack={() => navigate('/', {replace: true})} />
                 ) : null
             }
             <div className='character-details-page'>

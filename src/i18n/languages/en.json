@@ -3,6 +3,7 @@
     "nothingShowHere": "Nothing to show here...",
     "selectCharacter": "Select a character to display it's information here.",
     "searchByName": "Search by name...",
+    "character": "Character",
     "noQuoteAvailable": "No quote available.",
     "nickname": "Nickname",
     "portrayed": "Portrayed",
@@ -18,5 +19,9 @@
     "noConnection": "No connection",
     "noConnectionAvailable": "There's no Internet connection available. Check your connection and reload the page.",
     "unknownError": "Unknown error",
-    "unknownErrorOccured": "An unknown error occurred."
+    "unknownErrorOccured": "An unknown error occurred.",
+    "settings": "Settings",
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English"
 }

@@ -6,33 +6,21 @@
     box-sizing: border-box;
 
     > .left-content {
-        padding: 15px 20px;
         display: flex;
 
+        > .icon {
+            width: 55px;
+            height: auto;
+            padding: 5px;
+            margin-right: 15px;
+        }
+
         > .back-button {
+            padding-left: 20px;
+            padding-right: 20px;
             display: none;
-            border: none;
-            background-color: white;
-            width: 35px;
-            height: 35px;
-            text-align: center;
-            outline: none;
-            border-radius: 50%;
-            transition: 0.2s;
-            cursor: pointer;
-            margin-right: 20px;
-
-            > i {
-                font-size: 25px;
-            }
-
-            &:hover {
-                background-color: rgb(240, 240, 240);
-            }
-
-            &:active {
-                background-color: rgb(230, 230, 230);
-            }
+            align-items: center;
+            height: 100%;
         }
 
         > .page-title {
@@ -40,19 +28,43 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
     }
 
-    > .icon {
-        width: 55px;
-        height: 100%;
-        padding: 5px;
-        margin-right: 15px;
+    > .settings-button {
+        height: 65px;
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+    }
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+
+    > .language-select {
+        > .label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        > select {
+            width: 100%;
+            border: none;
+            outline: none;
+            background-color: rgb(240, 240, 240);
+            padding: 10px;
+            border-radius: 10px;
+        }
     }
 }
 
 @media (max-width: $mobileViewWidth) {
     .navbar > .left-content > .back-button {
-        display: block;
+        display: flex;
     }
 }
