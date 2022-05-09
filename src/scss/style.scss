@@ -34,6 +34,9 @@ html, body {
     margin: unset;
 }
 
+
+$mobileViewWidth: 1000px;
+
 @import './characters.scss';
 @import './characterdetails.scss';
 @import './navbar.scss';

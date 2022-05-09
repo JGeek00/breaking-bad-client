@@ -93,7 +93,7 @@ const CharacterDetails = () => {
                 onClose={() => setCharacterNotFound(false)}
             />
             {   
-                screenWidth <= 900 ? (
+                screenWidth <= 1000 ? (
                     <NavBar pageTitle="Character" goBack={() => navigate('/', {replace: true})} />
                 ) : null
             }
@@ -128,7 +128,7 @@ const CharacterDetails = () => {
                                                 )
                                             ) : (
                                                 <div className='loading-quote'>
-                                                    <HalfMalf center={false} />
+                                                    <HalfMalf width={85} height={85} center={false} />
                                                 </div>
                                             )
                                         }
