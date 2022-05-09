@@ -20,13 +20,16 @@ const NavBar = ({ pageTitle, goBack }) => {
         <div className='settings-content'>
             <div className='language-select'>
                 <div className='label'>{t("language")}</div>
-                <select value={i18n.language} onChange={handleChangeLanguage}>
-                    {
-                        languagesList.map((language, index) => (
-                            <option key={index} value={language.value}>{t(language.i18nLabel)}</option>
-                        ))
-                    }
-                </select>
+                <div className='select-div'>
+                    <select value={i18n.language} onChange={handleChangeLanguage}>
+                        {
+                            languagesList.map((language, index) => (
+                                <option key={index} value={language.value}>{t(language.i18nLabel)}</option>
+                            ))
+                        }
+                    </select>
+                    <i className="bi bi-caret-down"></i>
+                </div>
             </div>
         </div>
     );

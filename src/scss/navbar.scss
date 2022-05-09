@@ -51,13 +51,25 @@
             font-size: 15px;
         }
 
-        > select {
-            width: 100%;
-            border: none;
-            outline: none;
-            background-color: rgb(240, 240, 240);
-            padding: 10px;
-            border-radius: 10px;
+        > .select-div {
+            position: relative;
+
+            > select {
+                width: 100%;
+                border: none;
+                outline: none;
+                background-color: rgb(240, 240, 240);
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+            > i {
+                position: absolute;
+                right: 10px;
+                top: 8px;
+                font-size: 17px;
+                pointer-events: none;
+            }
         }
     }
 }

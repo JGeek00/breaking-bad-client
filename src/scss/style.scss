@@ -32,6 +32,10 @@ $fontFamily: 'SourceSansPro';
 html, body {
     font-family: $fontFamily;
     margin: unset;
+
+    button, select {
+        -webkit-appearance: none;
+    }
 }
 
 
