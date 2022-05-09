@@ -91,6 +91,7 @@ const CharacterDetails = () => {
         if (selectedCharacter) {
             callFetchQuote();
         }
+        // eslint-disable-next-line
     }, [selectedCharacter]);
 
     return (

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 import Characters from './pages/Characters';
 import CharacterDetails from './pages/CharacterDetails';
@@ -26,8 +25,6 @@ const App = () => {
         setApiRequestError
     } = useStore(state => state);
 
-    const { i18n } = useTranslation();
-
     useEffect(() => {
         const resizeListener = () => {
             setScreenWidth(window.innerWidth);
@@ -36,6 +33,7 @@ const App = () => {
         return () => {
             window.removeEventListener('resize', resizeListener);
         }
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
@@ -69,6 +67,7 @@ const App = () => {
             }
         }
         callGetCharacters();
+        // eslint-disable-next-line
     }, []);
 
     return (
