@@ -1,0 +1,22 @@
+{
+    "characters": "Characters",
+    "nothingShowHere": "Nothing to show here...",
+    "selectCharacter": "Select a character to display it's information here.",
+    "searchByName": "Search by name...",
+    "noQuoteAvailable": "No quote available.",
+    "nickname": "Nickname",
+    "portrayed": "Portrayed",
+    "birthday": "Birthday",
+    "occupation": "Occupation",
+    "apperance": "Apperance",
+    "status": "Status",
+    "characterNotFound": "Character not found",
+    "characterDoesntExist": "Character does not exist.",
+    "close": "Close",
+    "apiLimit": "API limit reached",
+    "maximumRequestsDay": "You have reached the maximum number of requests per day. Take a rest and come back tomorrow.",
+    "noConnection": "No connection",
+    "noConnectionAvailable": "There's no Internet connection available. Check your connection and reload the page.",
+    "unknownError": "Unknown error",
+    "unknownErrorOccured": "An unknown error occurred."
+}

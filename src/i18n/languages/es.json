@@ -1,0 +1,22 @@
+{
+    "characters": "Personajes",
+    "nothingShowHere": "Nada que mostrar aqui...",
+    "selectCharacter": "Elige un personaje para mostrar su información aquí.",
+    "searchByName": "Buscar por nombre...",
+    "noQuoteAvailable": "No hay frases disponibles.",
+    "nickname": "Apodo",
+    "portrayed": "Interpretado",
+    "birthday": "Cumpleaños",
+    "occupation": "Ocupación",
+    "apperance": "Apariciones",
+    "status": "Estado",
+    "characterNotFound": "Personaje no encontrado",
+    "characterDoesntExist": "El personaje no existe.",
+    "close": "Cerrar",
+    "apiLimit": "Límite de API alcanzado",
+    "maximumRequestsDay": "Has alcanzado el máximo número de peticiones que se pueden hacer en un día. Tómate un descanso y vuelve mañana.",
+    "noConnection": "Sin conexión",
+    "noConnectionAvailable": "No hay conexión a internet. Comprueba tu conexión y recarga la página.",
+    "unknownError": "Error desconocido",
+    "unknownErrorOccured": "Ocurrió un error desconocido."
+}

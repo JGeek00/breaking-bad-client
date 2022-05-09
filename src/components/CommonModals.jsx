@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Modal from './Modal';
 
@@ -15,26 +16,28 @@ const CommonModals = () => {
         setUnknownErrorModal
     } = useStore(state => state);
 
+    const {t} = useTranslation();
+
     return (
         <>
             <Modal 
                 open={apiLimitModal} 
-                title="API limit reached" 
-                content="You have reached the maximum number of requests per day. Take a rest and come back tomorrow."
+                title={t("apiLimit")}
+                content={t("maximumRequestsDay")}
                 defaultButtons={true}
                 onClose={() => setApiLimitModal(null)} 
             />
             <Modal 
                 open={noConnectionModal} 
-                title="No connection" 
-                content="There's no Internet connection available. Check your connection and reload the page."
+                title={t("noConnection")}
+                content={t("noConnectionAvailable")}
                 defaultButtons={true}
                 onClose={() => setNoConnectionModal(null)} 
             />
             <Modal 
                 open={unknownErrorModal} 
-                title="Unknown error" 
-                content="An unknown error occurred."
+                title={t("unknownError")}
+                content={t("unknownErrorOccured")}
                 defaultButtons={true}
                 onClose={() => setUnknownErrorModal(null)} 
             />

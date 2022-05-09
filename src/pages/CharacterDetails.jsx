@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HalfMalf } from 'react-spinner-animated';
+import { useTranslation } from 'react-i18next';
 
 import Modal from '../components/Modal';
 
@@ -31,6 +32,8 @@ const CharacterDetails = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         if (!loadingCharacters) {
@@ -87,8 +90,8 @@ const CharacterDetails = () => {
         <>
             <Modal 
                 open={characterNotFound} 
-                title="Character not found" 
-                content="This character doesn't exist"
+                title={t("characterNotFound")}
+                content={t("characterDoesntExist")}
                 defaultButtons={true}
                 onClose={() => setCharacterNotFound(false)}
             />
@@ -124,7 +127,7 @@ const CharacterDetails = () => {
                                                         </button>
                                                     </div>
                                                 ) : (
-                                                    <span className='no-quote'>No quote available.</span>
+                                                    <span className='no-quote'>{t("noQuoteAvailable")}</span>
                                                 )
                                             ) : (
                                                 <div className='loading-quote'>
@@ -138,19 +141,19 @@ const CharacterDetails = () => {
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <td>Nickname</td>
+                                                <td>{t("nickname")}</td>
                                                 <td>{selectedCharacter.nickname}</td>
                                             </tr>
                                             <tr>
-                                                <td>Portrayed</td>
+                                                <td>{t("portrayed")}</td>
                                                 <td>{selectedCharacter.portrayed}</td>
                                             </tr>
                                             <tr>
-                                                <td>Birthday</td>
+                                                <td>{t("birthday")}</td>
                                                 <td>{selectedCharacter.birthday}</td>
                                             </tr>
                                             <tr>
-                                                <td>Occupation</td>
+                                                <td>{t("occupation")}</td>
                                                 <td>
                                                     {
                                                         selectedCharacter.occupation.map((item, index) => `${item}${index < selectedCharacter.occupation.length-1 ? ', ' : ''}`)
@@ -158,7 +161,7 @@ const CharacterDetails = () => {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Apperance</td>
+                                                <td>{t("apperance")}</td>
                                                 <td>
                                                     {
                                                         selectedCharacter.appearance.map((item, index) => `${item}${index < selectedCharacter.appearance.length-1 ? ', ' : ''}`)
@@ -166,7 +169,7 @@ const CharacterDetails = () => {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Status</td>
+                                                <td>{t("status")}</td>
                                                 <td>{selectedCharacter.status}</td>
                                             </tr>
                                         </tbody>

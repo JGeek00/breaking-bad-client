@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { HalfMalf } from 'react-spinner-animated';
 
@@ -15,6 +16,8 @@ const Characters = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         if (searchValue) {
@@ -36,11 +39,11 @@ const Characters = () => {
             <div className='page-content'>
                 <div className='characters-col'>
                     <div className='col-header'>
-                        <div className='title'>Characters</div>
+                        <div className='title'>{t("characters")}</div>
                         {
                             !loadingCharacters && characters.length > 0 ? (
                                 <div className='search-field'>
-                                    <Search icon="bi-search" allowClear={true} value={searchValue} placeholder="Search by name..." onChange={setSearchValue} />
+                                    <Search icon="bi-search" allowClear={true} value={searchValue} placeholder={t("searchByName")} onChange={setSearchValue} />
                                 </div>
                             ) : null
                         }
@@ -71,7 +74,7 @@ const Characters = () => {
                                     ))
                                 ) : (
                                     <div className='no-characters'>
-                                        Nothing to show here...
+                                        {t("nothingShowHere")}
                                     </div>
                                 )
                             )
@@ -84,7 +87,7 @@ const Characters = () => {
                             <Outlet />
                         ) : (
                             <div className='no-char-selected'>
-                                Select a character to display it's information here.
+                                {t("selectCharacter")}
                             </div>
                         )
                     }
