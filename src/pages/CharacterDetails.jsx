@@ -93,7 +93,7 @@ const CharacterDetails = () => {
                 onClose={() => setCharacterNotFound(false)}
             />
             {   
-                screenWidth <= 1000 ? (
+                screenWidth <= 1100 ? (
                     <NavBar pageTitle="Character" goBack={() => navigate('/', {replace: true})} />
                 ) : null
             }

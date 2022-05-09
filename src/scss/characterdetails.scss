@@ -1,10 +1,10 @@
 .character-details-page {
-    width: calc(100% - 300px);
+    width: 75%;
     height: calc(100% - 65px);
     overflow: auto;
     position: absolute;
     top: 65px;
-    left: 300px;    
+    left: 25%;    
 
     &::-webkit-scrollbar {
         width: 16px;

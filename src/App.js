@@ -69,7 +69,7 @@ const App = () => {
             <CommonModals />
             <Routes>
                 {
-                    screenWidth > 1000 ? (
+                    screenWidth > 1100 ? (
                         <Route path="/" element={<Characters />}>
                             <Route path=":characterId" element={<CharacterDetails />} />
                         </Route>
