@@ -1,11 +1,15 @@
 .icon-button {
     border: none;
     background-color: white;
+    color: black;
     width: 35px;
     height: 35px;
     text-align: center;
     outline: none;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.2s;
     cursor: pointer;
 

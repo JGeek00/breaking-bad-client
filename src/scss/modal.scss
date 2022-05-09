@@ -30,7 +30,7 @@
         transition: 0.3s;
         z-index: 110;
         opacity: 0;
-        min-width: 20%;
+        min-width: 400px;
         margin-left: 5%;
         margin-right: 5%;
 
@@ -53,6 +53,7 @@
                 padding: 10px;
                 font-family: $fontFamily;
                 background-color: white;
+                color: black;
                 cursor: pointer;
                 transition: 0.2s;
     
@@ -65,5 +66,12 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 500px) {
+    .overlay.open > .modal {
+        min-width: unset;
+        width: 90%;
     }
 }
