@@ -60,6 +60,7 @@
                 }
 
                 > .character {
+                    width: calc(100% - 30px);
                     padding: 15px;
                     border-bottom: 1px solid rgb(230, 230, 230);
                     display: flex;
@@ -82,6 +83,7 @@
                     }
 
                     > .character-data {
+                        width: calc(100% - 55px);
                         display: flex;
                         align-items: center;
 
@@ -101,14 +103,23 @@
                             flex-direction: column;
                             justify-content: space-between;
                             height: 50px;
+                            width: 100%;
 
                             > .topLine {
                                 font-size: 18px;
                                 font-weight: bold;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                width: 100%;
                             }
     
                             > .bottomLine {
                                 font-size: 14px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                width: 100%;
                             }
                         }
                     }
