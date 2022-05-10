@@ -12,19 +12,24 @@
     width: 100%;
     height: 100%;
     
-    .spin::before {
-        animation: 1.5s linear infinite spinner;
-        animation-play-state: inherit;
-        border: solid 5px var(--grey3);
-        border-bottom-color: var(--color);
-        border-radius: 50%;
-        content: "";
-        height: 100%;
+    .spin {
         width: 100%;
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        transform: translate3d(-50%, -50%, 0);
-        will-change: transform;
+        height: 100%;
+        
+        &::before {
+            animation: 1.5s linear infinite spinner;
+            animation-play-state: inherit;
+            border: solid 5px var(--grey3);
+            border-bottom-color: var(--color);
+            border-radius: 50%;
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            will-change: transform;
+        }
     }
 }
