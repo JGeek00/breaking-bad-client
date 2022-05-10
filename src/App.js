@@ -23,8 +23,7 @@ const App = () => {
         screenWidth,
         setScreenWidth,
         setApiRequestError,
-        darkMode,
-        setDarkMode
+        darkMode
     } = useStore(state => state);
 
     useEffect(() => {
