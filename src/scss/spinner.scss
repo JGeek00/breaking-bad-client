@@ -15,8 +15,8 @@
     .spin::before {
         animation: 1.5s linear infinite spinner;
         animation-play-state: inherit;
-        border: solid 5px rgb(230, 230, 230);
-        border-bottom-color: black;
+        border: solid 5px var(--grey3);
+        border-bottom-color: var(--color);
         border-radius: 50%;
         content: "";
         height: 100%;

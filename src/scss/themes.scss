@@ -1,0 +1,33 @@
+:root {
+    --color: black;
+    --backgroundColor: white;
+    --grey1: rgb(130, 130, 130);
+    --grey2: rgb(180, 180, 180);
+    --grey3: rgb(230, 230, 230);
+    --grey4: rgb(235, 235, 235);
+    --grey5: rgb(240, 240, 240);
+    --modalOverlay: rgba(0, 0, 0, 0.3);
+    --modalBackground: white;
+    --buttonHover: rgba(0, 0, 0, 0.1);
+    --buttonActive: rgba(0, 0, 0, 0.2);
+    --fieldSelect: rgba(0, 0, 0, 0.05);
+    --fieldSelectHover: rgba(0, 0, 0, 0.1);
+    --fieldSelectActive: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] {
+    --color: white;
+    --backgroundColor: black;
+    --grey1: rgb(125, 125, 125);
+    --grey2: rgb(75, 75, 75);
+    --grey3: rgb(25, 25, 25);
+    --grey4: rgb(20, 20, 20);
+    --grey5: rgb(15, 15, 15);
+    --modalOverlay: rgba(0, 0, 0, 0.6);
+    --modalBackground: rgb(20, 20, 20);
+    --buttonHover: rgba(255, 255, 255, 0.1);
+    --buttonActive: rgba(255, 255, 255, 0.2);
+    --fieldSelect: rgba(255, 255, 255, 0.05);
+    --fieldSelectHover: rgba(255, 255, 255, 0.1);
+    --fieldSelectActive: rgba(255, 255, 255, 0.15);
+}

@@ -23,5 +23,8 @@
     "settings": "Ajustes",
     "language": "Idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "theme": "Tema",
+    "dark": "Oscuro",
+    "light": "Claro"
 }

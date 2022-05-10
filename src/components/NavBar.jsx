@@ -4,16 +4,27 @@ import { useTranslation } from 'react-i18next';
 import IconButton from './IconButton';
 import Modal from './Modal';
 
-import Icon from '../assets/img/breaking-bad.png';
+import IconLight from '../assets/img/breaking-bad.png';
+import IconDark from '../assets/img/breaking-bad-white.png';
 import { languagesList } from '../constants/languagesList';
+import useStore from '../store/useStore';
+import { writeLocalStorage } from '../services/local-storage';
 
 const NavBar = ({ pageTitle, goBack }) => {
     const [openSettings, setOpenSettings] = useState(false);
+
+    const { darkMode, setDarkMode } = useStore(state => state);
 
     const { t, i18n } = useTranslation();
 
     const handleChangeLanguage = (e) => {
         i18n.changeLanguage(e.target.value);
+    }
+
+    const changeDarkMode = () => {
+        const newStatus = !darkMode;
+        setDarkMode(newStatus);
+        writeLocalStorage('darkMode', newStatus);
     }
 
     const settingsContent = (
@@ -29,6 +40,19 @@ const NavBar = ({ pageTitle, goBack }) => {
                         }
                     </select>
                     <i className="bi bi-caret-down"></i>
+                </div>
+            </div>
+            <div className='theme-select'>
+                <div className='label'>{t("theme")}</div>
+                <div className='selector'>
+                    <div className={darkMode ? '' : 'enabled'} onClick={changeDarkMode}>
+                        <i className="bi bi-brightness-high"></i>
+                        {t("light")}
+                    </div>
+                    <div className={darkMode ? 'enabled' : ''} onClick={changeDarkMode}>
+                        <i className="bi bi-brightness-low"></i>
+                        {t("dark")}
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,7 +72,7 @@ const NavBar = ({ pageTitle, goBack }) => {
                     {
                         goBack 
                             ? <div className='back-button'><IconButton icon={<i className="bi bi-arrow-left"></i>} onClick={goBack} /></div>
-                            : <img className='icon' src={Icon} alt="Breaking Bad icon" />
+                            : <img className='icon' src={darkMode ? IconDark : IconLight} alt="Breaking Bad icon" />
                     }
                     <div className='page-title' data-testid="page-title">{pageTitle}</div>
                 </div>

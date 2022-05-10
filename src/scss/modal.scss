@@ -10,10 +10,11 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    transition: 0.3s;
+    transition: background-color 0.3s;
+    color: var(--color);
     
     &.open {
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: var(--modalOverlay);
         pointer-events: all;
         
         > .modal {
@@ -23,11 +24,11 @@
     }
 
     > .modal {
-        background-color: white;
+        background-color: var(--modalBackground);
         padding: 20px;
         border-radius: 20px;
         transform: scale(0);
-        transition: 0.3s;
+        transition: transform 0.3s, opacity 0.3s;
         z-index: 110;
         opacity: 0;
         min-width: 400px;
@@ -48,21 +49,21 @@
             justify-content: flex-end;
     
             > .button {
-                border: 1px solid black;
+                border: 1px solid var(--color);
                 border-radius: 20px;
                 padding: 10px;
                 font-family: $fontFamily;
-                background-color: white;
-                color: black;
+                background-color: transparent;
+                color: var(--color);
                 cursor: pointer;
-                transition: 0.2s;
+                transition: background-color 0.2s;
     
                 &:hover {
-                    background-color: rgb(240, 240, 240);
+                    background-color: var(--buttonHover);
                 }
     
                 &:active {
-                    background-color: rgb(230, 230, 230);
+                    background-color: var(--buttonActive);
                 }
             }
         }

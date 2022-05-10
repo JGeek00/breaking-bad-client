@@ -35,11 +35,14 @@ html, body {
 
     button, select {
         -webkit-appearance: none;
+        font-family: $fontFamily;
     }
 }
 
 
 $mobileViewWidth: 1100px;
+
+@import './themes.scss';
 
 @import './characters.scss';
 @import './characterdetails.scss';

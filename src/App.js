@@ -22,7 +22,9 @@ const App = () => {
         // CONFIG
         screenWidth,
         setScreenWidth,
-        setApiRequestError
+        setApiRequestError,
+        darkMode,
+        setDarkMode
     } = useStore(state => state);
 
     useEffect(() => {
@@ -71,7 +73,7 @@ const App = () => {
     }, []);
 
     return (
-        <>
+        <div data-theme={darkMode ? 'dark' : ''}>
             <CommonModals />
             <Routes>
                 {
@@ -87,7 +89,7 @@ const App = () => {
                     )
                 }
             </Routes>
-        </>
+        </div>
     );
 }
 

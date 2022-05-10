@@ -8,7 +8,6 @@ import IconButton from '../components/IconButton';
 import Spinner from '../components/Spinner';
 
 import useStore from '../store/useStore';
-import QuoteIcon from '../assets/img/quote-icon.svg';
 import { fetchRandomQuote } from '../services/api-requests';
 
 const CharacterDetails = () => {
@@ -127,9 +126,7 @@ const CharacterDetails = () => {
                                                 quote ? (
                                                     <div className='quote-div'>
                                                         <div className='quote'>
-                                                            <img className='start-quote' src={QuoteIcon} alt="Quote icon" />
-                                                            <img className='end-quote' src={QuoteIcon} alt="Quote icon" />
-                                                            <span className='quote-text'>{quote}</span>
+                                                            <span className='quote-text'>"{quote}"</span>
                                                         </div>  
                                                         <div className='refresh-quote'>
                                                             <IconButton icon={<i className="bi bi-arrow-repeat"></i>} withBorder={true} onClick={() => callFetchQuote()}/>

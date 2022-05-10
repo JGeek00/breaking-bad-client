@@ -5,18 +5,11 @@
     position: absolute;
     top: 65px;
     left: 25%;    
+    background-color: var(--backgroundColor);
+    color: var(--color);
+    transition: all 0.5s;
 
-    &::-webkit-scrollbar {
-        width: 16px;
-        background-color: white;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border: 4px solid rgba(0, 0, 0, 0);
-        background-clip: padding-box;
-        border-radius: 9999px;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+    @import './scrollbar.scss';
 
     > .loading {
         width: 100%;
@@ -71,8 +64,8 @@
 
                 > .no-quote {
                     padding: 10px;
-                    border: 1px solid rgb(130, 130, 130);
-                    color: rgb(130, 130, 130);
+                    border: 1px solid var(--grey1);
+                    color: var(--grey1);
                     border-radius: 20px;
                 }
 
@@ -82,32 +75,13 @@
                     align-items: center;
 
                     > .quote {
-                        background-color: rgb(240, 240, 240);
+                        background-color: var(--grey5);
                         position: relative;
                         padding: 20px;
                         border-radius: 30px;
-                        margin-left: 50px;
-                        padding-right: 30px;
                         min-width: 150px;
                         text-align: center;
-    
-                        > .start-quote {
-                            width: 100px;
-                            position: absolute;
-                            top: -60px;
-                            left: -40px;
-                            opacity: 0.15;
-                            transform: rotateY(180deg);
-                        }
-    
-                        > .end-quote {
-                            width: 100px;
-                            position: absolute;
-                            top: -60px;
-                            right: -40px;
-                            opacity: 0.15;
-                        }
-    
+
                         > span {
                             font-size: 20px;
                             font-family: 'Parisienne';
@@ -116,7 +90,6 @@
 
                     > .refresh-quote {
                         margin-top: 20px;
-                        margin-left: 50px;
                     }
                 }
             }
@@ -131,7 +104,8 @@
 
                 tr {
                     td {
-                        border-top: 1px solid rgb(230, 230, 230);
+                        transition: border-color 0.5s;
+                        border-top: 1px solid var(--grey3);
                         padding: 10px;
 
                         &:first-child {
@@ -145,7 +119,8 @@
                     }
 
                     &:last-child td {
-                        border-bottom: 1px solid rgb(230, 230, 230);
+                        transition: border-color 0.5s;
+                        border-bottom: 1px solid var(--grey3);
                     } 
                 }
             }
@@ -170,20 +145,6 @@
             > .right {
                 width: 100%;
                 margin-left: unset;
-
-                > .quote-div {
-                    > .quote {
-                        margin-left: unset;
-    
-                        > .start-quote, > .end-quote {
-                            display: none;
-                        }
-                    }
-
-                    > .refresh-quote {
-                        margin-left: unset;
-                    }
-                }
             }
         }
     }
