@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { HalfMalf } from 'react-spinner-animated';
 
 import NavBar from '../components/NavBar';
 import Search from '../components/Search';
+import Spinner from '../components/Spinner';
 
 import useStore from '../store/useStore';
 
@@ -52,7 +52,7 @@ const Characters = () => {
                         {
                             loadingCharacters ? (
                                 <div className='loading'>
-                                    <HalfMalf center={false} />
+                                    <Spinner size='50px' />
                                 </div>
                             ) : (
                                 displayCharacters.length > 0 ? (

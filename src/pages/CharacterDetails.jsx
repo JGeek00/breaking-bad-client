@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { HalfMalf } from 'react-spinner-animated';
 import { useTranslation } from 'react-i18next';
 
 import Modal from '../components/Modal';
+import NavBar from '../components/NavBar';
+import IconButton from '../components/IconButton';
+import Spinner from '../components/Spinner';
 
 import useStore from '../store/useStore';
 import QuoteIcon from '../assets/img/quote-icon.svg';
 import { fetchRandomQuote } from '../services/api-requests';
-import NavBar from '../components/NavBar';
-import IconButton from '../components/IconButton';
 
 const CharacterDetails = () => {
     const {
@@ -140,7 +140,7 @@ const CharacterDetails = () => {
                                                 )
                                             ) : (
                                                 <div className='loading-quote'>
-                                                    <HalfMalf width={85} height={85} center={false} />
+                                                    <Spinner size='30px' />
                                                 </div>
                                             )
                                         }
@@ -188,7 +188,7 @@ const CharacterDetails = () => {
                         ) : null
                     ) : (
                         <div className='loading'>
-                            <HalfMalf center={false} />
+                            <Spinner size='60px' />
                         </div>
                     )
                 }

@@ -7,7 +7,6 @@ import App from './App';
 import './i18n/i18n';
 
 import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
-import 'react-spinner-animated/dist/index.css'
 import './scss/style.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

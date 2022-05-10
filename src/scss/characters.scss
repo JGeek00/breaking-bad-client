@@ -177,6 +177,10 @@
     .characters-page > .page-content {
         > .characters-col {
             width: 100%;
+
+            > .list > .character > .end-arrow {
+                display: none;
+            }
         }
 
         > .details-div {
