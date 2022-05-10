@@ -19,7 +19,6 @@ This is a React.js web app client for the [Breaking Bad API](https://breakingbad
 - [Axios](https://github.com/axios/axios): simplifies the process of creating and handling HTTP requests.
 - [Bootstrap icons](https://icons.getbootstrap.com/): a nice and modern icon pack, with lots of icons.
 - [i18n](https://react.i18next.com/): enables app internacionalization by adding the option to handle multiple languages.
-- [React spinner animated](https://www.npmjs.com/package/react-spinner-animated): beautiful and modern spinners to display when data is being loaded.
 - [SASS](https://www.npmjs.com/package/sass): allows you to use SCSS stylesheets with React. SCSS is much more powerful than normal CSS.
 - [Zustand](https://github.com/pmndrs/zustand): handles the global state management in a simple and effective way.
 
