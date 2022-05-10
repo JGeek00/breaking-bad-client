@@ -43,14 +43,14 @@ const NavBar = ({ pageTitle, goBack }) => {
                 content={settingsContent}
                 onClose={() => setOpenSettings(false)}
             />
-            <div className='navbar'>
+            <div className='navbar' data-testid="navbar">
                 <div className='left-content'>
                     {
                         goBack 
                             ? <div className='back-button'><IconButton icon={<i className="bi bi-arrow-left"></i>} onClick={goBack} /></div>
                             : <img className='icon' src={Icon} alt="Breaking Bad icon" />
                     }
-                    <div className='page-title'>{pageTitle}</div>
+                    <div className='page-title' data-testid="page-title">{pageTitle}</div>
                 </div>
                 <div className='settings-button'>
                     <IconButton icon={<i className="bi bi-gear-wide-connected"></i>} onClick={() => setOpenSettings(true)} />

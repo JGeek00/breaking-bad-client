@@ -5,13 +5,13 @@ const Modal = ({ open, title, content, closeClickOutside, defaultButtons, onClos
     const { t } = useTranslation();
 
     return (
-        <div className={open ? 'overlay open' : 'overlay'} onClick={closeClickOutside ? onClose : null}>
+        <div className={open ? 'overlay open' : 'overlay'} onClick={closeClickOutside ? onClose : null} data-testid="modal">
             <div className='modal'>
-                {title ? <div className='title'>{title}</div> : null}
-                <div className='content'>{content}</div>
+                {title ? <div className='title' data-testid="title">{title}</div> : null}
+                <div className='content' data-testid="content">{content}</div>
                 {
                     defaultButtons ? (
-                        <div className='buttons'>
+                        <div className='buttons' data-testid="default-buttons">
                             <button className='button' onClick={onClose}>{t("close")}</button>
                         </div>
                     ) : null
